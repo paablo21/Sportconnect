@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect.controller.AdminController"
+            style="-fx-background-color: #EEF2F7; -fx-background: #EEF2F7;">
+
+    <VBox spacing="16" style="-fx-padding: 20;">
+
+        <!-- Título -->
+        <VBox styleClass="card">
+            <Label text="Panel de Administración" styleClass="section-title"/>
+            <Label text="Gestiona pistas, usuarios y reservas" styleClass="stat-label"/>
+        </VBox>
+
+        <!-- Stats -->
+        <HBox spacing="12">
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Total Pistas" styleClass="stat-label"/>
+                <Label fx:id="lblTotalPistas" text="0" styleClass="stat-number"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Total Usuarios" styleClass="stat-label"/>
+                <Label fx:id="lblTotalUsuarios" text="0" styleClass="stat-number"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Total Reservas" styleClass="stat-label"/>
+                <Label fx:id="lblTotalReservas" text="0" styleClass="stat-number"/>
+            </VBox>
+        </HBox>
+
+        <!-- Deportes -->
+        <VBox styleClass="card" spacing="10">
+            <Label text="Deportes" styleClass="sub-title"/>
+            <TableView fx:id="tablaDeportes" prefHeight="150">
+                <columns>
+                    <TableColumn fx:id="colDepId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colDepNombre" text="Nombre" prefWidth="250"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <TextField fx:id="txtNuevoDeporte" promptText="Nombre del deporte" prefWidth="250"/>
+                <Button text="Añadir deporte" onAction="#agregarDeporte" styleClass="btn-primary"/>
+                <Button text="Eliminar seleccionado" onAction="#eliminarDeporte" styleClass="btn-danger"/>
+            </HBox>
+            <Label fx:id="lblDepEstado"/>
+        </VBox>
+
+        <!-- Pistas -->
+        <VBox styleClass="card" spacing="10">
+            <Label text="Pistas" styleClass="sub-title"/>
+            <TableView fx:id="tablaPistas" prefHeight="150">
+                <columns>
+                    <TableColumn fx:id="colPistaNombre" text="Nombre" prefWidth="180"/>
+                    <TableColumn fx:id="colPistaDeporte" text="Deporte" prefWidth="130"/>
+                    <TableColumn fx:id="colPistaPrecio" text="Precio/h" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <TextField fx:id="txtNuevaPista" promptText="Nombre de la pista" prefWidth="180"/>
+                <TextField fx:id="txtPrecio" promptText="Precio €/h" prefWidth="90"/>
+                <ComboBox fx:id="cboDeporte" promptText="Deporte" prefWidth="150"/>
+                <Button text="Añadir pista" onAction="#agregarPista" styleClass="btn-primary"/>
+                <Button text="Eliminar seleccionada" onAction="#eliminarPista" styleClass="btn-danger"/>
+            </HBox>
+            <Label fx:id="lblPistaEstado"/>
+        </VBox>
+
+        <!-- Usuarios -->
+        <VBox styleClass="card" spacing="10">
+            <Label text="Usuarios" styleClass="sub-title"/>
+            <TableView fx:id="tablaUsuarios" prefHeight="150">
+                <columns>
+                    <TableColumn fx:id="colUsuNombre" text="Nombre" prefWidth="180"/>
+                    <TableColumn fx:id="colUsuEmail" text="Email" prefWidth="200"/>
+                    <TableColumn fx:id="colUsuRol" text="Rol" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <TextField fx:id="txtNuevoNombre" promptText="Nombre" prefWidth="140"/>
+                <TextField fx:id="txtNuevoEmail" promptText="Email" prefWidth="160"/>
+                <TextField fx:id="txtNuevoPassword" promptText="Contraseña" prefWidth="120"/>
+                <ComboBox fx:id="cboRol" promptText="Rol" prefWidth="100"/>
+                <Button text="Añadir" onAction="#agregarUsuario" styleClass="btn-primary"/>
+                <Button text="Eliminar seleccionado" onAction="#eliminarUsuario" styleClass="btn-danger"/>
+            </HBox>
+            <Label fx:id="lblUsuEstado"/>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,253 @@
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #EEF2F7;
+}
+
+/* HEADER */
+.header {
+    -fx-background-color: white;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 0 0 2 0;
+}
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+.header-user {
+    -fx-text-fill: #64748B;
+}
+
+/* BOTONES */
+.btn-primary {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+.btn-primary:hover { -fx-background-color: #1D4ED8; }
+
+.btn-danger {
+    -fx-background-color: #DC2626;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+.btn-danger:hover { -fx-background-color: #B91C1C; }
+
+.btn-salir {
+    -fx-background-color: transparent;
+    -fx-text-fill: #DC2626;
+    -fx-border-color: #DC2626;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+/* TARJETA blanca */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-padding: 16;
+}
+
+/* SECCIONES */
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+.sub-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+/* TABLA */
+.table-view .column-header-background {
+    -fx-background-color: #1E3A5F;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table-row-cell:selected {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+}
+.table-row-cell:selected > .table-cell {
+    -fx-text-fill: white;
+}
+.table-row-cell:hover:!selected {
+    -fx-background-color: #DBEAFE;
+}
+
+/* STAT CARD */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-padding: 16;
+    -fx-min-width: 150;
+}
+.stat-number {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+.stat-label {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 12px;
+}
+
+/* TABS */
+.tab-pane > .tab-header-area > .headers-region > .tab:selected .tab-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563EB;
+}
+
+/* Hover y pressed en botones */
+.btn-primary:hover {
+    -fx-background-color: #1D4ED8;
+    -fx-cursor: hand;
+}
+.btn-primary:pressed {
+    -fx-background-color: #1E40AF;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+.btn-danger:hover {
+    -fx-background-color: #B91C1C;
+}
+.btn-danger:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+.btn-salir:hover {
+    -fx-background-color: #FEF2F2;
+}
+
+/* Focus visible para accesibilidad */
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: #2563EB;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+}
+.button:focused {
+    -fx-border-color: #1E3A5F;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+}
+
+/* Tarjeta de pista */
+.pista-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-padding: 16;
+    -fx-min-width: 220;
+    -fx-max-width: 220;
+}
+.pista-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 4);
+}
+
+/* Badge deporte */
+.badge {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 11;
+}
+
+/* Nombre pista en tarjeta */
+.pista-nombre {
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+
+/* Precio */
+.pista-precio {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2563EB;
+}
+
+/* Reserva card */
+.reserva-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-padding: 16;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Chip de fecha/hora */
+.chip {
+    -fx-background-color: #EEF2F7;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+    -fx-text-fill: #374151;
+}
+
+.btn-nav-activo {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+.btn-nav {
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+.btn-nav:hover {
+    -fx-background-color: #EEF2F7;
+}
+
+.lbl-ok { -fx-text-fill: #16A34A; }
+.lbl-error { -fx-text-fill: #DC2626; }
+
+.hora-disponible {
+    -fx-background-color: #DCFCE7;
+    -fx-text-fill: #16A34A;
+    -fx-background-radius: 8;
+    -fx-border-color: #86EFAC;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 90;
+    -fx-pref-height: 40;
+}
+.hora-ocupada {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #DC2626;
+    -fx-background-radius: 8;
+    -fx-border-color: #FCA5A5;
+    -fx-border-radius: 8;
+    -fx-pref-width: 90;
+    -fx-pref-height: 40;
+}
+.hora-seleccionada {
+    -fx-background-color: #1E3A5F;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #1E3A5F;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-pref-width: 90;
+    -fx-pref-height: 40;
+}

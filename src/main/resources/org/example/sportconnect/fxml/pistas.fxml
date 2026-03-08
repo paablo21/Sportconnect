@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect.controller.PistasController"
+            style="-fx-background-color: #EEF2F7; -fx-background: #EEF2F7;">
+
+    <VBox spacing="16" style="-fx-padding: 20; -fx-background-color: #EEF2F7;">
+
+        <!-- Banner bienvenida -->
+        <VBox styleClass="card" spacing="4">
+            <Label text="Bienvenido a SportConnect"
+                   style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+            <Label text="Selecciona una pista y reserva tu próximo partido"
+                   style="-fx-text-fill: #64748B;"/>
+        </VBox>
+
+        <!-- Buscador -->
+        <HBox spacing="10" styleClass="card" alignment="CENTER_LEFT">
+            <TextField fx:id="txtBuscar" promptText="Buscar pistas..."
+                       HBox.hgrow="ALWAYS"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #CBD5E1; -fx-padding: 8;"/>
+            <ComboBox fx:id="cboFiltro" prefWidth="150" promptText="Todos"/>
+        </HBox>
+
+        <!-- Grid de tarjetas -->
+        <FlowPane fx:id="flowPistas" hgap="16" vgap="16" prefWrapLength="800"/>
+
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect.controller.MainController"
+            stylesheets="@../css/styles.css"
+            style="-fx-background-color: #EEF2F7;">
+
+    <top>
+        <VBox>
+            <HBox alignment="CENTER_LEFT" spacing="20"
+                  style="-fx-background-color: white; -fx-padding: 10 24 10 24; -fx-border-color: #E2E8F0; -fx-border-width: 0 0 2 0;">
+
+                <!-- Logo -->
+                <ImageView fitWidth="50" fitHeight="50" preserveRatio="true">
+                    <image><Image url="@../images/logo.png"/></image>
+                </ImageView>
+
+                <!-- Nav buttons centrados -->
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox spacing="8" alignment="CENTER">
+                    <Button fx:id="btnInicio" text="Inicio" onAction="#mostrarInicio" styleClass="btn-nav"/>
+                    <Button fx:id="btnMisReservas" text="Mis Reservas" onAction="#mostrarMisReservas" styleClass="btn-nav"/>
+                    <Button fx:id="btnAdmin" text="Administración" onAction="#mostrarAdmin" styleClass="btn-nav"/>
+                </HBox>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Usuario y Salir -->
+                <VBox alignment="CENTER_RIGHT">
+                    <Label fx:id="lblUsuario" style="-fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+                    <Label fx:id="lblRol" style="-fx-text-fill: #64748B; -fx-font-size: 11;"/>
+                </VBox>
+                <Button text="Salir" onAction="#logout"
+                        style="-fx-background-color: transparent; -fx-text-fill: #DC2626; -fx-border-color: #DC2626; -fx-border-radius: 6; -fx-background-radius: 6; -fx-font-weight: bold; -fx-padding: 6 14 6 14; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="contenido" style="-fx-padding: 20;">
+            <fx:include fx:id="pistas" source="pistas.fxml"/>
+            <fx:include fx:id="misReservas" source="mis-reservas.fxml"/>
+            <fx:include fx:id="admin" source="admin.fxml"/>
+            <fx:include fx:id="reservar" source="reservar.fxml"/>
+        </StackPane>
+    </center>
+
+</BorderPane>

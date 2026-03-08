@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.sportconnect.controller.LoginController">
+
+    <!-- LADO IZQUIERDO con imagen de fondo -->
+    <StackPane HBox.hgrow="ALWAYS">
+        <ImageView fitWidth="500" fitHeight="600" preserveRatio="false">
+            <image><Image url="@../images/fondo_login.png"/></image>
+        </ImageView>
+        <VBox alignment="TOP_CENTER" style="-fx-background-color: rgba(10,30,60,0.45); -fx-padding: 120 0 0 0;">
+            <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                <image><Image url="@../images/logo.png"/></image>
+            </ImageView>
+        </VBox>
+    </StackPane>
+
+    <!-- LADO DERECHO formulario -->
+    <VBox HBox.hgrow="ALWAYS" alignment="CENTER" spacing="14"
+          style="-fx-background-color: white; -fx-padding: 50;">
+
+        <Label text="Iniciar Sesión"
+               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+        <Label text="Accede a tu cuenta para reservar pistas"
+               style="-fx-text-fill: #64748B; -fx-font-size: 13;"/>
+
+        <VBox spacing="6" maxWidth="300">
+            <Label text="Correo electrónico" style="-fx-font-weight: bold; -fx-text-fill: #374151;"/>
+            <TextField fx:id="txtEmail" promptText="tu@email.com" prefWidth="300"
+                       style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #CBD5E1; -fx-padding: 8;"/>
+        </VBox>
+
+        <VBox spacing="6" maxWidth="300">
+            <Label text="Contraseña" style="-fx-font-weight: bold; -fx-text-fill: #374151;"/>
+            <PasswordField fx:id="txtPassword" promptText="Contraseña" prefWidth="300"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-border-color: #CBD5E1; -fx-padding: 8;"/>
+        </VBox>
+
+        <Label fx:id="lblError" style="-fx-text-fill: #DC2626;" wrapText="true" maxWidth="300"/>
+
+        <Button text="Entrar" onAction="#login"
+                accessibleText="Iniciar sesión con email y contraseña"
+                prefWidth="300" defaultButton="true"
+                style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 10; -fx-cursor: hand; -fx-font-size: 14;"/>
+    </VBox>
+
+</HBox>

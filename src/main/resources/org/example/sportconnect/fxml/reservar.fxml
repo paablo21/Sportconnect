@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect.controller.ReservarController"
+            style="-fx-background-color: #EEF2F7; -fx-background: #EEF2F7;">
+
+    <VBox spacing="16" style="-fx-padding: 20; -fx-background-color: #EEF2F7;">
+
+        <!-- Volver -->
+        <Button text="← Volver al catálogo" onAction="#volver"
+                style="-fx-background-color: transparent; -fx-text-fill: #2563EB; -fx-font-weight: bold; -fx-cursor: hand; -fx-font-size: 13;"/>
+
+        <HBox spacing="16">
+
+            <!-- IZQUIERDA: info pista -->
+            <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="card" maxWidth="340">
+                <Label fx:id="lblNombrePista"
+                       style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+                <Label fx:id="lblDeportePista"
+                       style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 3 12 3 12; -fx-font-size: 12;"/>
+                <Label fx:id="lblPrecioPista"
+                       style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2563EB;"/>
+
+                <!-- Resumen -->
+                <VBox spacing="8"
+                      style="-fx-background-color: #EEF2F7; -fx-background-radius: 8; -fx-padding: 12;">
+                    <Label text="Resumen de reserva"
+                           style="-fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+                    <Label fx:id="lblResumenFecha" text="📅  Selecciona una fecha"
+                           style="-fx-text-fill: #64748B;"/>
+                    <Label fx:id="lblResumenHora" text="🕐  Selecciona una hora"
+                           style="-fx-text-fill: #64748B;"/>
+                </VBox>
+
+                <Label fx:id="lblEstado" wrapText="true"/>
+            </VBox>
+
+            <!-- DERECHA: calendario y horas -->
+            <VBox spacing="12" HBox.hgrow="ALWAYS">
+
+                <!-- Calendario -->
+                <VBox styleClass="card" spacing="10">
+                    <Label text="Selecciona una fecha"
+                           style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+                    <DatePicker fx:id="dpFecha" prefWidth="300"/>
+                </VBox>
+
+                <!-- Horas -->
+                <VBox fx:id="vboxHoras" styleClass="card" spacing="10">
+                    <Label text="Horarios disponibles"
+                           style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+                    <FlowPane fx:id="flowHoras" hgap="10" vgap="10"/>
+                    <HBox spacing="16">
+                        <Label text="🟢 Disponible" style="-fx-text-fill: #64748B; -fx-font-size: 11;"/>
+                        <Label text="🔴 Ocupado" style="-fx-text-fill: #64748B; -fx-font-size: 11;"/>
+                        <Label text="🔵 Seleccionado" style="-fx-text-fill: #64748B; -fx-font-size: 11;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Confirmar -->
+                <Button fx:id="btnConfirmar" text="✓  Confirmar Reserva"
+                        onAction="#confirmarReserva"
+                        accessibleText="Confirmar la reserva de la pista seleccionada"
+                        maxWidth="Infinity"
+                        style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14; -fx-background-radius: 8; -fx-padding: 14; -fx-cursor: hand;"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

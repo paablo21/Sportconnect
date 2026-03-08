@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect.controller.MisReservasController"
+            style="-fx-background-color: #EEF2F7; -fx-background: #EEF2F7;">
+
+    <VBox spacing="16" style="-fx-padding: 20; -fx-background-color: #EEF2F7;">
+
+        <!-- Banner -->
+        <VBox styleClass="card" spacing="4">
+            <Label text="Mis Reservas"
+                   style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #1E3A5F;"/>
+            <Label text="Gestiona tus reservas activas"
+                   style="-fx-text-fill: #64748B;"/>
+        </VBox>
+
+        <Label text="Reservas Activas"
+               style="-fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #16A34A;"/>
+
+        <VBox fx:id="vboxReservas" spacing="12"/>
+
+        <Label fx:id="lblVacio" text="No tienes reservas todavía."
+               style="-fx-text-fill: #64748B; -fx-font-size: 13;"/>
+
+    </VBox>
+</ScrollPane>
