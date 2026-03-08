@@ -38,17 +38,17 @@ public class MainController implements Initializable {
 
         if (SessionManager.isAdmin()) {
             lblRol.setText("Administrador");
-            btnMisReservas.setVisible(false);
-            btnMisReservas.setManaged(false);
             btnInicio.setVisible(false);
             btnInicio.setManaged(false);
+            btnMisReservas.setVisible(false);
+            btnMisReservas.setManaged(false);
+            mostrarAdmin();
         } else {
             lblRol.setText("Usuario");
             btnAdmin.setVisible(false);
             btnAdmin.setManaged(false);
+            mostrarInicio();
         }
-
-        mostrarAdmin();
     }
 
     private void resetBotones() {
