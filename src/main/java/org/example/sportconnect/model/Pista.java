@@ -22,8 +22,8 @@ public class Pista {
     @JoinColumn(name = "deporte_id", nullable = false)
     private Deporte deporte;
 
-    @OneToMany(mappedBy = "pista", fetch = FetchType.LAZY)
-    private List<Reserva> reservas = new ArrayList<>();
+    @OneToMany(mappedBy = "pista", cascade = CascadeType.ALL)
+    private java.util.List<Reserva> reservas = new java.util.ArrayList<>();
 
     public Pista() {}
 

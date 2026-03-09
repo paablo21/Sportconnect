@@ -15,8 +15,8 @@ public class Deporte {
     @Column(nullable = false, unique = true)
     private String nombre;
 
-    @OneToMany(mappedBy = "deporte", fetch = FetchType.LAZY)
-    private List<Pista> pistas = new ArrayList<>();
+    @OneToMany(mappedBy = "deporte", cascade = CascadeType.ALL)
+    private java.util.List<Pista> pistas = new java.util.ArrayList<>();
 
     public Deporte() {}
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.sportconnect.controller.RegistroController">
+
+    <!-- LADO IZQUIERDO con imagen de fondo -->
+    <StackPane HBox.hgrow="ALWAYS">
+        <ImageView fitWidth="500" fitHeight="600" preserveRatio="false">
+            <image><Image url="@../images/fondo_login.png"/></image>
+        </ImageView>
+        <VBox alignment="TOP_CENTER" style="-fx-background-color: rgba(10,30,60,0.45); -fx-padding: 120 0 0 0;">
+            <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                <image><Image url="@../images/logo.png"/></image>
+            </ImageView>
+        </VBox>
+    </StackPane>
+
+    <!-- LADO DERECHO formulario -->
+    <VBox HBox.hgrow="ALWAYS" alignment="CENTER" spacing="14"
+          style="-fx-background-color: white; -fx-padding: 50;">
+
+        <Label text="Crear cuenta" styleClass="login-title"/>
+        <Label text="Rellena los datos para registrarte" styleClass="login-subtitle"/>
+
+        <VBox spacing="6" maxWidth="300">
+            <Label text="Nombre" styleClass="form-label"/>
+            <TextField fx:id="txtNombre" promptText="Tu nombre" prefWidth="300"
+                       styleClass="text-field-custom"/>
+        </VBox>
+
+        <VBox spacing="6" maxWidth="300">
+            <Label text="Correo electrónico" styleClass="form-label"/>
+            <TextField fx:id="txtEmail" promptText="correo@ejemplo.com" prefWidth="300"
+                       styleClass="text-field-custom"/>
+        </VBox>
+
+        <VBox spacing="6" maxWidth="300">
+            <Label text="Contraseña" styleClass="form-label"/>
+            <PasswordField fx:id="txtPassword" promptText="Contraseña" prefWidth="300"
+                           styleClass="text-field-custom"/>
+        </VBox>
+
+        <Label fx:id="lblError" styleClass="lbl-error" wrapText="true" maxWidth="300"/>
+
+        <Button text="Crear cuenta" onAction="#registrar"
+                prefWidth="300" styleClass="btn-primary"/>
+
+        <Button text="¿Ya tienes cuenta? Inicia sesión" onAction="#volverLogin"
+                styleClass="btn-link" maxWidth="Infinity"/>
+    </VBox>
+
+</HBox>

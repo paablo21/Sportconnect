@@ -251,3 +251,48 @@
     -fx-pref-width: 90;
     -fx-pref-height: 40;
 }
+
+.btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2563EB;
+    -fx-cursor: hand;
+    -fx-font-size: 12;
+}
+.btn-link:hover {
+    -fx-underline: true;
+}
+
+.login-overlay {
+    -fx-background-color: rgba(10,30,60,0.55);
+    -fx-min-width: 900;
+    -fx-min-height: 600;
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-padding: 40;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 24, 0, 0, 6);
+}
+.login-title {
+    -fx-font-size: 22;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E3A5F;
+}
+.login-subtitle {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 13;
+}
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-font-size: 13;
+}
+.text-field-custom {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #CBD5E1;
+    -fx-padding: 8;
+    -fx-font-size: 13;
+}
+

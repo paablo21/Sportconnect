@@ -42,4 +42,14 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void irARegistro() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("fxml/registro.fxml"));
+            MainApp.primaryStage.getScene().setRoot(loader.load());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

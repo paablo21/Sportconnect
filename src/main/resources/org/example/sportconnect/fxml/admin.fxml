@@ -91,5 +91,22 @@
             <Label fx:id="lblUsuEstado"/>
         </VBox>
 
+        <!-- Todas las reservas — bloque independiente -->
+        <VBox styleClass="card" spacing="10">
+            <Label text="Todas las Reservas" styleClass="sub-title"/>
+            <TableView fx:id="tablaReservas" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="colResUsuario" text="Usuario" prefWidth="150"/>
+                    <TableColumn fx:id="colResPista" text="Pista" prefWidth="150"/>
+                    <TableColumn fx:id="colResFecha" text="Fecha" prefWidth="120"/>
+                    <TableColumn fx:id="colResHora" text="Hora" prefWidth="130"/>
+                </columns>
+                <placeholder><Label text="No hay reservas."/></placeholder>
+            </TableView>
+            <HBox spacing="10">
+                <Button text="Eliminar seleccionada" onAction="#eliminarReserva" styleClass="btn-danger"/>
+            </HBox>
+        </VBox>
+
     </VBox>
 </ScrollPane>

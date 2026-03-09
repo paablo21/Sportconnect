@@ -48,6 +48,9 @@
                 accessibleText="Iniciar sesión con email y contraseña"
                 prefWidth="300" defaultButton="true"
                 style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 10; -fx-cursor: hand; -fx-font-size: 14;"/>
+
+        <Button text="¿No tienes cuenta? Regístrate" onAction="#irARegistro"
+                styleClass="btn-link" maxWidth="Infinity"/>
     </VBox>
 
 </HBox>

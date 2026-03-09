@@ -12,6 +12,8 @@ import org.example.sportconnect.service.DeporteService;
 import org.example.sportconnect.service.PistaService;
 import org.example.sportconnect.model.Usuario;
 import org.example.sportconnect.service.UsuarioService;
+import org.example.sportconnect.model.Reserva;
+import org.example.sportconnect.service.ReservaService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,6 +53,14 @@ public class AdminController implements Initializable {
     @FXML private Label lblTotalUsuarios;
     @FXML private Label lblTotalReservas;
 
+    @FXML private TableView<Reserva> tablaReservas;
+    @FXML private TableColumn<Reserva, String> colResUsuario;
+    @FXML private TableColumn<Reserva, String> colResPista;
+    @FXML private TableColumn<Reserva, String> colResFecha;
+    @FXML private TableColumn<Reserva, String> colResHora;
+
+    private final ReservaService reservaService = new ReservaService();
+
     private final DeporteService deporteService = new DeporteService();
     private final PistaService pistaService = new PistaService();
     private final UsuarioService usuarioService = new UsuarioService();
@@ -78,6 +88,22 @@ public class AdminController implements Initializable {
         lblTotalPistas.setText(String.valueOf(pistaService.getAll().size()));
         lblTotalUsuarios.setText(String.valueOf(usuarioService.getAll().size()));
         lblTotalReservas.setText(String.valueOf(new org.example.sportconnect.service.ReservaService().getAll().size()));
+
+        colResUsuario.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getUsuario().getNombre())
+        );
+        colResPista.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getPista().getNombre())
+        );
+        colResFecha.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getFecha().toString())
+        );
+        colResHora.setCellValueFactory(data ->
+                new SimpleStringProperty(
+                        data.getValue().getHoraInicio() + " - " + data.getValue().getHoraFin()
+                )
+        );
+        tablaReservas.setItems(FXCollections.observableArrayList(reservaService.getAll()));
     }
 
     private void cargarDeportes() {
@@ -173,6 +199,15 @@ public class AdminController implements Initializable {
             lblPistaEstado.setText("Selecciona una pista.");
             return;
         }
+        // Comprobar si tiene reservas
+        long reservasDePista = reservaService.getAll().stream()
+                .filter(r -> r.getPista().getId().equals(seleccionada.getId()))
+                .count();
+        if (reservasDePista > 0) {
+            lblPistaEstado.getStyleClass().setAll("lbl-error");
+            lblPistaEstado.setText("No se puede eliminar, tiene reservas activas.");
+            return;
+        }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "¿Eliminar la pista " + seleccionada.getNombre() + "?", ButtonType.OK, ButtonType.CANCEL);
         alert.showAndWait().ifPresent(r -> {
@@ -200,6 +235,24 @@ public class AdminController implements Initializable {
                 lblDepEstado.getStyleClass().setAll("lbl-ok");
                 lblDepEstado.setText("Deporte eliminado.");
                 cargarDeportes();
+            }
+        });
+    }
+
+    @FXML
+    public void eliminarReserva() {
+        Reserva seleccionada = tablaReservas.getSelectionModel().getSelectedItem();
+        if (seleccionada == null) {
+            return;
+        }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                "¿Eliminar la reserva de " + seleccionada.getUsuario().getNombre() + "?",
+                ButtonType.OK, ButtonType.CANCEL);
+        alert.showAndWait().ifPresent(r -> {
+            if (r == ButtonType.OK) {
+                reservaService.delete(seleccionada.getId());
+                tablaReservas.setItems(FXCollections.observableArrayList(reservaService.getAll()));
+                lblTotalReservas.setText(String.valueOf(reservaService.getAll().size()));
             }
         });
     }
